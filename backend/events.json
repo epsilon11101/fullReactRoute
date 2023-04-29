@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"save the dog","image":"https://hips.hearstapps.com/hmg-prod/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=1.00xw:0.756xh;0,0.0756xh&resize=1200:*","date":"2023-04-29","description":"qksd,kq,sdkq,skd,kqs,dkq,skd,kqs,kd","id":"810119ac-4e26-460a-a804-a8c5523f26df"},{"title":"my birthday","image":"https://i.guim.co.uk/img/media/efd5430a55d520f7c78c8a4e874a78aef4fe1156/0_384_5760_3456/master/5760.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=40002488290c8192e013785c4b7c180a","date":"2023-04-29","description":"my lonely birthday","id":"26eb4e9b-8c10-46e8-8e99-f6d00bbfeea1"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
