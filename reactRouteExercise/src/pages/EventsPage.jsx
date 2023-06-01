@@ -1,19 +1,27 @@
-import { useLoaderData, json } from "react-router-dom";
+import { useLoaderData, json, defer, Await } from "react-router-dom";
 import EventsList from "../components/EventsList";
+import { Suspense } from "react";
 
 function EventsPage() {
-  const data = useLoaderData();
+  const { events } = useLoaderData();
+
+  return (
+    <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
+      <Await resolve={events}>
+        {(loadedEvents) => <EventsList events={loadedEvents} />}
+      </Await>
+    </Suspense>
+  );
   // if (data.isError) {
   //   return <p>{data.message}</p>;
   // }
-  const events = data.events;
-  return <EventsList events={events} />;
+  // const events = data.events;
+  // return <EventsList events={events} />;
 }
 
 export default EventsPage;
 
-// we can use hooks in loader functions
-export async function loader() {
+async function loadEvents() {
   const response = await fetch("http://localhost:8080/events/");
 
   if (!response.ok) {
@@ -25,6 +33,14 @@ export async function loader() {
     // });
     throw json({ message: "error on fetch events" }, { status: 500 });
   } else {
-    return response;
+    const resData = await response.json();
+    return resData.events;
   }
+}
+
+// we cant use hooks in loader functions
+export function loader() {
+  return defer({
+    events: loadEvents(),
+  });
 }
